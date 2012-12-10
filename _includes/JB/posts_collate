@@ -48,6 +48,8 @@ Usage:
 
           <h1>{{ post.title }}</h1>
           <p>{{ post.description }}</p>
+
+          <img src="{{ BASE_PATH }}/posts/assets/{{ post.image }}">
         </article>
       </li>
 
