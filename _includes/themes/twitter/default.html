@@ -26,17 +26,41 @@
 
   <body>
 
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
+
+
+    <header>
+      <div class="container">
+        <div class="author">
+          <img class="gravatar" src="https://secure.gravatar.com/avatar/9112400090829f79d97ed9b12056fa4f?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
+
+            <h1>Matthew McCullough</h1>
+            <h2>PRP for Training at GitHub</h2>
+
+            {% comment %}
+              <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+            {% endcomment %}
+            <a href="twitter">Twitter</a>
+            <a href="github">GitHub</a>
         </div>
+        <!-- <nav> -->
+        <div class="navbar pull-right">
+          <div class="navbar-inner">
+            <ul class="nav">
+              {% assign pages_list = site.pages %}
+              {% assign group = 'navigation' %}
+              {% include JB/pages_list %}
+            </ul>
+          </div>
+        </div>
+
+
+
+        <!-- </nav> -->
       </div>
+    </header>
+  
+          
+
     </div>
 
     <div class="container">
@@ -44,14 +68,11 @@
       <div class="content">
         {{ content }}
       </div>
+    </div>
 
-      <footer>
-        <h1>Matthew McCullough</h1>
-        <p>
-          Matthew is a software engineer by trade and a teacher at heart. This combination is supported by his always-exciting employment at <a href="http://github.com">GitHub</a>.
-        </p>
-
-        <h2>Get in Touch</h2>
+    <footer>
+      <div class="container">
+        <h1>Get in Touch</h1>
         <ul>
           <li class="github">Fork me on GitHub</li>
           <li class="twitter">Follow me on Twitter</li>
@@ -61,9 +82,8 @@
         <p>&copy; {{ site.author.name }} 2012 
           with help from <a href="http://jordanmccullough.github.com" target="_blank">Jordan McCullough</a> and <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
         </p>
-      </footer>
-
-    </div> <!-- /container -->
+      </div>
+    </footer>
 
     {% include JB/analytics %}
   </body>
