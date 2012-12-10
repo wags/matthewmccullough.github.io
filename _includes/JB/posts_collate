@@ -23,21 +23,32 @@ Usage:
   {% for post in posts_collate  %}
 
     {% if forloop.first %}
-      <ul>
+      <ul class="posts">
     {% endif %}
 
       <li>
+        <!--Microformat Vars-->
+        {% capture mf_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        {% capture mf_month %}{{ post.date | date: "%m" }}{% endcapture %}
+        {% capture mf_day %}{{ post.date | date: "%d" }}{% endcapture %}
+
+        <!--Display Vars-->
         {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-        {% capture this_month %}{{ post.date | date: "%b" }}{% endcapture %}
+        {% capture this_month %}{{ post.date | date: "%b" }}.{% endcapture %}
         {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
         {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
         {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
 
-        <h2>{{this_year}}</h2>
-        <h3>{{this_month}}</h3>
-        <h4>{{this_day}}</h4>
-        <h1>{{ post.title }}</h1>
-        {{ post.description }}
+        <article>
+          <time pubdate datetime="{{ mf_year }}-{{ mf_month }}-{{ mf_day }}">
+            <span class="month">{{this_month}}</span>
+            <span class="day">{{this_day}}</span>
+            <span class="year">{{this_year}}</span>
+          </time>
+
+          <h1>{{ post.title }}</h1>
+          <p>{{ post.description }}</p>
+        </article>
       </li>
 
     {% if forloop.last %}
