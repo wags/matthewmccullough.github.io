@@ -1,3 +1,10 @@
+/* General Overrides */
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway:700,300);
+
+body,html{
+	font-family: "Raleway", Helvetica, sans-serif;
+}
+
 /* Posts */
 .posts{
 	list-style-type: none;
@@ -5,19 +12,23 @@
 	padding:0;
 }
 .posts li{
-	border-bottom: solid 1px #dcdcdc;
+	border-bottom: solid 1px #d9d5d2;
+}
+h1, h2, h3, h4, h5, h6{
+	/*color: #b99d5b;*/
+	/*color: #b99d5b;*/
+	font-family: "Libre Baskerville";
 }
 
 .posts article{
 	padding: 1em;
-	background: #f0f1f1;
+	background: #f1f1f1;
 	margin: 1em 1em 0 1em;
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
 }
 
 .posts article time{
-	/*border: solid 1px black;*/
 	font-size: 1em;
 	display: block;
 	position: relative;
@@ -25,8 +36,10 @@
 }
 	
 	.posts article time .day{
-		border-right: solid 1px gray;
+		border-right: solid 1px #d9d5d2;
 		font-size: 3em;
+		width: 1em;
+		text-align: center;
 		padding: .5em .25em .5em 0;
 		position: absolute;
 		left: 0;
@@ -44,12 +57,12 @@
 	}
 
 .posts article h1{
-	margin-left: 35%;
-	width: 65%;
+	margin-left: 25%;
+	width: 75%;
 }
 .posts article p{
-	margin-left: 35%;
-	width: 65%;
+	margin-left: 25%;
+	width: 75%;
 }
 
 
